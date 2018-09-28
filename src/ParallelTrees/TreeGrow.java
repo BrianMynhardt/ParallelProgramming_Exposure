@@ -69,5 +69,21 @@ public class TreeGrow {
 		setupGUI(frameX, frameY, sundata.trees);
 		
 		// create and start simulation loop here as separate thread
+		float minh = 0.0f;
+		float maxh = 2.0f;
+		for(int i = 0;i<5;i++){
+
+			for(int layer = 0; layer <= 10; layer++) {
+				for (Tree tree:sundata.trees) {
+					if(tree.getExt() >= minh && tree.getExt() < maxh) {
+						tree.sungrow(sundata.sunmap);
+						sundata.sunmap.shadow(tree);
+					}
+				}
+			}
+			minh = maxh;  // next band of trees
+			maxh += 2.0f;
+
+		}
 	}
 }

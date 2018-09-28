@@ -4,8 +4,10 @@ public class Land{
 	
 	// to do
 	// sun exposure data here
-	private int dimX,dimY;
+	private final int dimX,dimY;
 	private float[][] sunMap;
+	private float[][] ShadedsunMap;
+
 
 	static float shadefraction = 0.1f; // only this fraction of light is transmitted by a tree
 
@@ -14,13 +16,14 @@ public class Land{
 		this.dimX = dx;
 		this.dimY = dy;
 		this.sunMap = new float[dy][dx];
+		this.ShadedsunMap = new float[dy][dx];
 	}
-
+	// return the number of landscape cells in the x dimension
 	int getDimX() {
 		int temp = dimX;
 		return temp;
 	}
-	
+	// return the number of landscape cells in the y dimension
 	int getDimY() {
 		int temp = dimY;
 		return temp;
@@ -31,27 +34,40 @@ public class Land{
 	void resetShade() {
 		// to do
 	}
-	
+	// return the sun exposure of the initial unshaded landscape at position <x,y?
 	float getFull(int x, int y) {
-		// to do
-		return 0.0f; // incorrect value
+		float temp = sunMap[y][x];
+		return temp;
 	}
-	
+	// set the sun exposure of the initial unshaded landscape at position <x,y> to <val>
 	void setFull(int x, int y, float val) {
 		sunMap[y][x]=val;
 	}
-	
+	// return the current sun exposure of the shaded landscape at position <x,y>
 	float getShade(int x, int y) {
-		// to do 
-		return 0.0f; // incorrect value
+		float temp = ShadedsunMap[y][x];
+		return temp;
 	}
-	
+	// set the sun exposure of the shaded landscape at position <x,y> to <val>
 	void setShade(int x, int y, float val){
-		// to do
+		ShadedsunMap[y][x]=val;
 	}
-	
-	// reduce the 
+
+	// reduce the sun exposure of the shaded landscape to 10% of the original
+	// within the extent of <tree>
 	void shadow(Tree tree){
-		// to do
+		int ypos = tree.getY();
+		int xpos = tree.getX();
+		float ext = tree.getExt();
+		float newVal;
+		for(int i=(int)(ypos-Math.ceil(ext)); i < (ypos+Math.ceil(ext)); i++){
+			for(int j=(int)(xpos-Math.ceil(ext)); j < (xpos+Math.ceil(ext)); j++){
+				if(j < dimX && i < dimY){
+					newVal = sunMap[i][j];
+					newVal = newVal*shadefraction;
+					setShade(j,i,newVal);
+				}
+			}
+		}
 	}
 }

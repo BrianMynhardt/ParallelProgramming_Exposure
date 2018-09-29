@@ -2,12 +2,16 @@ package ParallelTrees;
 
 import javax.swing.*;
 import java.awt.Dimension;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 
-public class TreeGrow {
+public class TreeGrow implements ActionListener {
 	static long startTime = 0;
 	static int frameX;
 	static int frameY;
 	static ForestPanel fp;
+	protected static JButton play, pause, reset, end;
 
 	// start timer
 	private static void tick(){
@@ -37,6 +41,75 @@ public class TreeGrow {
 		fp.setAutoscrolls(true);
 		scrollFrame.setPreferredSize(fsize);
 	    g.add(scrollFrame);
+
+	    play= new JButton("play");
+		play.setVerticalTextPosition(AbstractButton.CENTER);
+		play.setHorizontalTextPosition(AbstractButton.LEADING);
+		play.setMnemonic(KeyEvent.VK_D);
+		play.setActionCommand("disable");
+		play.addActionListener( new ActionListener() {
+			@Override
+			public void actionPerformed( ActionEvent e ) {
+				if ("disable".equals(e.getActionCommand())) {
+					play.setEnabled(false);
+				} else {
+
+				}
+			}
+		} );
+		g.add(play);
+
+		pause = new JButton("pause");
+		pause.setVerticalTextPosition(AbstractButton.CENTER);
+		pause.setHorizontalTextPosition(AbstractButton.LEADING);
+		pause.setMnemonic(KeyEvent.VK_D);
+		pause.setActionCommand("disable");
+		pause.addActionListener( new ActionListener() {
+			@Override
+			public void actionPerformed( ActionEvent e ) {
+				if ("disable".equals(e.getActionCommand())) {
+					pause.setEnabled(false);
+				} else {
+
+				}
+			}
+		} );
+		g.add(pause);
+
+		reset = new JButton("reset");
+		reset.setVerticalTextPosition(AbstractButton.CENTER);
+		reset.setHorizontalTextPosition(AbstractButton.LEADING);
+		reset.setMnemonic(KeyEvent.VK_D);
+		reset.setActionCommand("disable");
+		reset.addActionListener( new ActionListener() {
+			@Override
+			public void actionPerformed( ActionEvent e ) {
+				if ("disable".equals(e.getActionCommand())) {
+					reset.setEnabled(false);
+				} else {
+
+				}
+			}
+		} );
+		g.add(reset);
+
+		end = new JButton("end");
+		end.setVerticalTextPosition(AbstractButton.CENTER);
+		end.setHorizontalTextPosition(AbstractButton.LEADING);
+		end.setMnemonic(KeyEvent.VK_D);
+		end.setActionCommand("disable");
+		end.addActionListener( new ActionListener() {
+			@Override
+			public void actionPerformed( ActionEvent e ) {
+				if ("disable".equals(e.getActionCommand())) {
+					end.setEnabled(false);
+				} else {
+
+				}
+			}
+		} );
+		g.add(end);
+
     	
       	frame.setLocationRelativeTo(null);  // Center window on screen.
       	frame.add(g); //add contents to window
@@ -45,11 +118,13 @@ public class TreeGrow {
         Thread fpt = new Thread(fp);
         fpt.start();
 	}
+	public void actionPerformed(ActionEvent e) {
+
+	}
 	
 		
 	public static void main(String[] args) {
 		SunData sundata = new SunData();
-		Buttons buttons = new Buttons();
 		
 		// check that number of command line arguments is correct
 //		if(args.length != 1)
@@ -64,26 +139,19 @@ public class TreeGrow {
 		
 		frameX = sundata.sunmap.getDimX();
 		frameY = sundata.sunmap.getDimY();
-		buttons.createAndShowGUI();
 
 		setupGUI(frameX, frameY, sundata.trees);
-		
-		// create and start simulation loop here as separate thread
-		float minh = 0.0f;
-		float maxh = 2.0f;
-		for(int i = 0;i<5;i++){
-
-			for(int layer = 0; layer <= 10; layer++) {
-				for (Tree tree:sundata.trees) {
-					if(tree.getExt() >= minh && tree.getExt() < maxh) {
-						tree.sungrow(sundata.sunmap);
-						sundata.sunmap.shadow(tree);
-					}
-				}
+		for(int i=0;i<100;i++) {
+			for (Tree tree : sundata.trees) {
+				sundata.sunmap.shadow(tree);
+				tree.sungrow(sundata.sunmap);
+				try {
+					Thread.sleep(20);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				};
 			}
-			minh = maxh;  // next band of trees
-			maxh += 2.0f;
-
 		}
+
 	}
 }

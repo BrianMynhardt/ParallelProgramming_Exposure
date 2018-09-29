@@ -62,7 +62,7 @@ public class Land{
 		float newVal;
 		for(int i=(int)(ypos-Math.ceil(ext)); i < (ypos+Math.ceil(ext)); i++){
 			for(int j=(int)(xpos-Math.ceil(ext)); j < (xpos+Math.ceil(ext)); j++){
-				if(j < dimX && i < dimY){
+				if(j < dimX && i < dimY && j>=0 && i>=0){
 					newVal = sunMap[i][j];
 					newVal = newVal*shadefraction;
 					setShade(j,i,newVal);

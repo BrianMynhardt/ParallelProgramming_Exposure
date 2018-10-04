@@ -1,7 +1,7 @@
 package ParallelTrees;
 
 // Trees define a canopy which covers a square area of the landscape
-public class Tree{
+public class Tree implements Comparable<Tree>{
 	
 private
 	int xpos;	// x-coordinate of center of tree canopy
@@ -28,26 +28,22 @@ public
 	}
 	
 	void setExt(float e) {
-    if (e<=20) {
         ext = e;
-    }else{
-        ext = 20;
     }
-	}
 
 	// return the average sunlight for the cells covered by the tree
 	float sunexposure(Land land){
 		double extent = getExt();
 		float sunlight=0;
-		for(int i=(int)(ypos-Math.ceil(extent)); i < (ypos+Math.ceil(extent)); i++){
-			for(int j=(int)(xpos-Math.ceil(extent)); j < (xpos+Math.ceil(extent)); j++){
-				if(j < land.getDimX()&& j>=0 && i < land.getDimY()&&i>=0){
-					sunlight += land.getShade(i,j);
+		for(int i=(int)(xpos-Math.ceil(extent)); i < (xpos+Math.ceil(extent)); i++){
+			for(int j=(int)(ypos-Math.ceil(extent)); j < (ypos+Math.ceil(extent)); j++){
+				if(j < land.getDimY()&& j>=0 && i < land.getDimX()&&i>=0){
+					sunlight += land.getShade(j,i);
 				}
 			}
 		}
 		//System.out.println(sunlight);
-		sunlight = sunlight/(ext*2+1)*(ext*2+1);
+		sunlight = sunlight/((ext*2+1)*(ext*2+1));
 		return sunlight/growfactor;
 	}
 	
@@ -63,5 +59,16 @@ public
 
     void resetExtent() {
         this.setExt(0.4f);
+    }
+
+    public int compareTo(Tree tree){
+        if(this.ext == tree.ext){
+            return 0;
+        }else if(this.ext < tree.ext){
+            return -1;
+        }else{
+            return 1;
+        }
+
     }
 }

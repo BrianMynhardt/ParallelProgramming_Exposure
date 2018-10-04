@@ -55,7 +55,7 @@ public class ForestPanel extends JPanel implements Runnable {
 		while(true) {
 			repaint();
 			try {
-				Thread.sleep(500);
+				Thread.sleep(20);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			};

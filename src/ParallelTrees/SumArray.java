@@ -24,8 +24,8 @@ public class SumArray extends RecursiveTask<Float> {
 
             for (int i = lo; i < hi; i++) {
                 Tree tree = trees[i];
-                float minh = 18.0f;
-                float maxh = 20.0f;
+                float minh = 0.0f;
+                float maxh = 2.0f;
                 for(int layer = 0; layer <= 10; layer++) {
 
                 if(tree.getExt() >= minh && tree.getExt() < maxh) { // only render trees in current band
@@ -34,9 +34,9 @@ public class SumArray extends RecursiveTask<Float> {
                     sunMap.shadow(tree);
                 }
 
-
-                maxh = minh;
-                minh -= 2.0f;  // next band of trees
+                minh = maxh;
+                maxh += 2.0f;
+                  // next band of trees
 
                 }
             }

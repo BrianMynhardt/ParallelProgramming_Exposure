@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="56e7042c-beba-4002-b316-30c45809a4a5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CSC2002S/ParallelTrees/Buttons.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSC2002S/ParallelTrees/ForestPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSC2002S/ParallelTrees/ForestPanel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CSC2002S/ParallelTrees/Land.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSC2002S/ParallelTrees/Land.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CSC2002S/ParallelTrees/Tree.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSC2002S/ParallelTrees/Tree.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CSC2002S/ParallelTrees/TreeGrow$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSC2002S/ParallelTrees/TreeGrow$1.class" afterDir="false" />
@@ -11,9 +11,9 @@
       <change beforePath="$PROJECT_DIR$/out/production/CSC2002S/ParallelTrees/TreeGrow$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSC2002S/ParallelTrees/TreeGrow$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CSC2002S/ParallelTrees/TreeGrow$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSC2002S/ParallelTrees/TreeGrow$4.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CSC2002S/ParallelTrees/TreeGrow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSC2002S/ParallelTrees/TreeGrow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ParallelTrees/Buttons.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ParallelTrees/ForestPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ParallelTrees/ForestPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ParallelTrees/Land.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ParallelTrees/Land.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ParallelTrees/SumArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ParallelTrees/SumArray.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ParallelTrees/Tree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ParallelTrees/Tree.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ParallelTrees/TreeGrow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ParallelTrees/TreeGrow.java" afterDir="false" />
     </list>
@@ -49,12 +49,12 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="4" />
-          <entry key="java" value="1956" />
+          <entry key="java" value="2508" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="1956" />
+          <entry key="JAVA" value="2508" />
           <entry key="PLAIN_TEXT" value="4" />
         </counts>
       </usages-collector>
@@ -69,22 +69,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ParallelTrees/ForestPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="57" column="32" selection-start-line="57" selection-start-column="32" selection-end-line="57" selection-end-column="32" />
+            <state relative-caret-position="564">
+              <caret line="57" column="31" selection-start-line="57" selection-start-column="31" selection-end-line="57" selection-end-column="31" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ParallelTrees/Land.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="61" column="4" selection-start-line="61" selection-start-column="4" selection-end-line="61" selection-end-column="4" />
+            <state relative-caret-position="877">
+              <caret line="72" column="17" lean-forward="true" selection-start-line="72" selection-start-column="17" selection-end-line="72" selection-end-column="17" />
               <folding>
                 <element signature="e#518#519#0" expanded="true" />
                 <element signature="e#537#538#0" expanded="true" />
                 <element signature="e#632#633#0" expanded="true" />
                 <element signature="e#650#651#0" expanded="true" />
+                <element signature="e#1207#1208#0" expanded="true" />
+                <element signature="e#1230#1231#0" expanded="true" />
+                <element signature="e#1510#1511#0" expanded="true" />
+                <element signature="e#1539#1540#0" expanded="true" />
                 <element signature="e#2095#2096#0" expanded="true" />
                 <element signature="e#2120#2121#0" expanded="true" />
               </folding>
@@ -95,8 +99,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ParallelTrees/SunData.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="12" lean-forward="true" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
+            <state relative-caret-position="-337">
+              <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="11" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -107,29 +111,31 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ParallelTrees/Tree.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-214">
-              <caret line="33" column="17" selection-start-line="33" selection-start-column="17" selection-end-line="33" selection-end-column="17" />
+            <state relative-caret-position="241">
+              <caret line="45" column="49" selection-start-line="45" selection-start-column="49" selection-end-line="45" selection-end-column="49" />
               <folding>
-                <element signature="e#1284#1285#0" expanded="true" />
-                <element signature="e#1325#1326#0" expanded="true" />
-                <element signature="e#1400#1401#0" expanded="true" />
-                <element signature="e#1438#1439#0" expanded="true" />
-                <element signature="e#1464#1465#0" expanded="true" />
-                <element signature="e#1497#1498#0" expanded="true" />
+                <element signature="e#632#633#0" expanded="true" />
+                <element signature="e#655#656#0" expanded="true" />
+                <element signature="e#1275#1276#0" expanded="true" />
+                <element signature="e#1316#1317#0" expanded="true" />
+                <element signature="e#1391#1392#0" expanded="true" />
+                <element signature="e#1429#1430#0" expanded="true" />
+                <element signature="e#1455#1456#0" expanded="true" />
+                <element signature="e#1488#1489#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ParallelTrees/TreeGrow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="99">
-              <caret line="172" column="35" selection-start-line="172" selection-start-column="35" selection-end-line="172" selection-end-column="35" />
+            <state relative-caret-position="265">
+              <caret line="76" column="37" lean-forward="true" selection-start-line="76" selection-start-column="37" selection-end-line="76" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3810#3811#0" expanded="true" />
-                <element signature="e#3884#3885#0" expanded="true" />
+                <element signature="e#4063#4064#0" expanded="true" />
+                <element signature="e#4137#4138#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -138,8 +144,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ParallelTrees/SumArray.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="40" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
+            <state relative-caret-position="85">
+              <caret line="26" column="30" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -170,11 +176,12 @@
       <list>
         <option value="$PROJECT_DIR$/src/ParallelTrees/ButtonDemo.java" />
         <option value="$PROJECT_DIR$/src/ParallelTrees/Buttons.java" />
-        <option value="$PROJECT_DIR$/src/ParallelTrees/Tree.java" />
-        <option value="$PROJECT_DIR$/src/ParallelTrees/TreeGrow.java" />
+        <option value="$PROJECT_DIR$/src/ParallelTrees/Land.java" />
+        <option value="$PROJECT_DIR$/src/ParallelTrees/SunData.java" />
         <option value="$PROJECT_DIR$/src/ParallelTrees/ForestPanel.java" />
         <option value="$PROJECT_DIR$/src/ParallelTrees/SumArray.java" />
-        <option value="$PROJECT_DIR$/src/ParallelTrees/Land.java" />
+        <option value="$PROJECT_DIR$/src/ParallelTrees/Tree.java" />
+        <option value="$PROJECT_DIR$/src/ParallelTrees/TreeGrow.java" />
       </list>
     </option>
   </component>
@@ -184,7 +191,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="762" />
     <option name="width" value="781" />
     <option name="height" value="870" />
@@ -270,12 +277,12 @@
       <workItem from="1538222448783" duration="3472000" />
       <workItem from="1538379709669" duration="1809000" />
       <workItem from="1538557287618" duration="12000" />
-      <workItem from="1538635883765" duration="12524000" />
+      <workItem from="1538635883765" duration="19956000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31175000" />
+    <option name="totallyTimeSpent" value="38607000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
@@ -289,7 +296,7 @@
       <window_info anchor="bottom" id="Version Control" order="0" />
       <window_info anchor="bottom" id="Terminal" order="1" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="3" weight="0.3297587" />
+      <window_info anchor="bottom" id="Messages" order="3" weight="0.32917964" />
       <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Find" order="5" weight="0.3297587" />
       <window_info active="true" anchor="bottom" id="Run" order="6" visible="true" weight="0.2554517" />
@@ -372,8 +379,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ParallelTrees/SunData.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="12" lean-forward="true" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
+        <state relative-caret-position="-337">
+          <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="11" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -382,56 +389,62 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ParallelTrees/Tree.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-214">
-          <caret line="33" column="17" selection-start-line="33" selection-start-column="17" selection-end-line="33" selection-end-column="17" />
+        <state relative-caret-position="241">
+          <caret line="45" column="49" selection-start-line="45" selection-start-column="49" selection-end-line="45" selection-end-column="49" />
           <folding>
-            <element signature="e#1284#1285#0" expanded="true" />
-            <element signature="e#1325#1326#0" expanded="true" />
-            <element signature="e#1400#1401#0" expanded="true" />
-            <element signature="e#1438#1439#0" expanded="true" />
-            <element signature="e#1464#1465#0" expanded="true" />
-            <element signature="e#1497#1498#0" expanded="true" />
+            <element signature="e#632#633#0" expanded="true" />
+            <element signature="e#655#656#0" expanded="true" />
+            <element signature="e#1275#1276#0" expanded="true" />
+            <element signature="e#1316#1317#0" expanded="true" />
+            <element signature="e#1391#1392#0" expanded="true" />
+            <element signature="e#1429#1430#0" expanded="true" />
+            <element signature="e#1455#1456#0" expanded="true" />
+            <element signature="e#1488#1489#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ParallelTrees/ForestPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="57" column="32" selection-start-line="57" selection-start-column="32" selection-end-line="57" selection-end-column="32" />
+        <state relative-caret-position="564">
+          <caret line="57" column="31" selection-start-line="57" selection-start-column="31" selection-end-line="57" selection-end-column="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ParallelTrees/TreeGrow.java">
+    <entry file="file://$PROJECT_DIR$/src/ParallelTrees/Land.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="172" column="35" selection-start-line="172" selection-start-column="35" selection-end-line="172" selection-end-column="35" />
+        <state relative-caret-position="877">
+          <caret line="72" column="17" lean-forward="true" selection-start-line="72" selection-start-column="17" selection-end-line="72" selection-end-column="17" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3810#3811#0" expanded="true" />
-            <element signature="e#3884#3885#0" expanded="true" />
+            <element signature="e#518#519#0" expanded="true" />
+            <element signature="e#537#538#0" expanded="true" />
+            <element signature="e#632#633#0" expanded="true" />
+            <element signature="e#650#651#0" expanded="true" />
+            <element signature="e#1207#1208#0" expanded="true" />
+            <element signature="e#1230#1231#0" expanded="true" />
+            <element signature="e#1510#1511#0" expanded="true" />
+            <element signature="e#1539#1540#0" expanded="true" />
+            <element signature="e#2095#2096#0" expanded="true" />
+            <element signature="e#2120#2121#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ParallelTrees/SumArray.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="40" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
+        <state relative-caret-position="85">
+          <caret line="26" column="30" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ParallelTrees/Land.java">
+    <entry file="file://$PROJECT_DIR$/src/ParallelTrees/TreeGrow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="61" column="4" selection-start-line="61" selection-start-column="4" selection-end-line="61" selection-end-column="4" />
+        <state relative-caret-position="265">
+          <caret line="76" column="37" lean-forward="true" selection-start-line="76" selection-start-column="37" selection-end-line="76" selection-end-column="37" />
           <folding>
-            <element signature="e#518#519#0" expanded="true" />
-            <element signature="e#537#538#0" expanded="true" />
-            <element signature="e#632#633#0" expanded="true" />
-            <element signature="e#650#651#0" expanded="true" />
-            <element signature="e#2095#2096#0" expanded="true" />
-            <element signature="e#2120#2121#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#4063#4064#0" expanded="true" />
+            <element signature="e#4137#4138#0" expanded="true" />
           </folding>
         </state>
       </provider>

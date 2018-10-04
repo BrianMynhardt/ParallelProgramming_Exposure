@@ -1,10 +1,12 @@
 package ParallelTrees;
 
 import javax.swing.*;
-import java.awt.Dimension;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
+import java.util.ArrayList;
+import java.util.concurrent.ForkJoinPool;
 
 public class TreeGrow implements ActionListener {
 	static long startTime = 0;
@@ -12,6 +14,7 @@ public class TreeGrow implements ActionListener {
 	static int frameY;
 	static ForestPanel fp;
 	protected static JButton play, pause, reset, end;
+	static SunData sundata = new SunData();
 
 	// start timer
 	private static void tick(){
@@ -29,7 +32,7 @@ public class TreeGrow implements ActionListener {
     	JFrame frame = new JFrame("Photosynthesis"); 
     	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     	frame.setPreferredSize(fsize);
-    	frame.setSize(800, 800);
+    	frame.setSize(800, 820);
     	
       	JPanel g = new JPanel();
         g.setLayout(new BoxLayout(g, BoxLayout.PAGE_AXIS)); 
@@ -41,6 +44,8 @@ public class TreeGrow implements ActionListener {
 		fp.setAutoscrolls(true);
 		scrollFrame.setPreferredSize(fsize);
 	    g.add(scrollFrame);
+
+
 
 	    play= new JButton("play");
 		play.setVerticalTextPosition(AbstractButton.CENTER);
@@ -57,7 +62,6 @@ public class TreeGrow implements ActionListener {
 				}
 			}
 		} );
-		g.add(play);
 
 		pause = new JButton("pause");
 		pause.setVerticalTextPosition(AbstractButton.CENTER);
@@ -68,13 +72,13 @@ public class TreeGrow implements ActionListener {
 			@Override
 			public void actionPerformed( ActionEvent e ) {
 				if ("disable".equals(e.getActionCommand())) {
-					pause.setEnabled(false);
+					Thread.yield();
 				} else {
 
 				}
 			}
 		} );
-		g.add(pause);
+
 
 		reset = new JButton("reset");
 		reset.setVerticalTextPosition(AbstractButton.CENTER);
@@ -85,13 +89,16 @@ public class TreeGrow implements ActionListener {
 			@Override
 			public void actionPerformed( ActionEvent e ) {
 				if ("disable".equals(e.getActionCommand())) {
-					reset.setEnabled(false);
+					sundata.sunmap.resetShade();
+					for (Tree tree : sundata.trees) {
+						sundata.sunmap.resetExtent(tree);
+					}
 				} else {
 
 				}
 			}
 		} );
-		g.add(reset);
+
 
 		end = new JButton("end");
 		end.setVerticalTextPosition(AbstractButton.CENTER);
@@ -102,29 +109,44 @@ public class TreeGrow implements ActionListener {
 			@Override
 			public void actionPerformed( ActionEvent e ) {
 				if ("disable".equals(e.getActionCommand())) {
-					end.setEnabled(false);
+					System.exit(0);
 				} else {
 
 				}
 			}
 		} );
-		g.add(end);
+
+
+		JPanel f = new JPanel();
+		f.setLayout(new FlowLayout(FlowLayout.CENTER));
+		f.setPreferredSize(new Dimension(800,40));
+		g.add(f,1);
+		f.add(play);
+		f.add(pause);
+		f.add(reset);
+		f.add(end);
+
 
     	
       	frame.setLocationRelativeTo(null);  // Center window on screen.
-      	frame.add(g); //add contents to window
-        frame.setContentPane(g);     
-        frame.setVisible(true);
+      	frame.add(g);//add contents to window
+        frame.setContentPane(g);
+
+		frame.setVisible(true);
         Thread fpt = new Thread(fp);
         fpt.start();
 	}
 	public void actionPerformed(ActionEvent e) {
 
 	}
+	static final ForkJoinPool fjPool = new ForkJoinPool();
+	static float sum(Tree[] arr){
+		return fjPool.invoke(new SumArray(arr,0,arr.length,sundata.sunmap));
+	}
 	
 		
 	public static void main(String[] args) {
-		SunData sundata = new SunData();
+
 		
 		// check that number of command line arguments is correct
 //		if(args.length != 1)
@@ -139,18 +161,25 @@ public class TreeGrow implements ActionListener {
 		
 		frameX = sundata.sunmap.getDimX();
 		frameY = sundata.sunmap.getDimY();
+		for (Tree tree : sundata.trees) {
+			sundata.sunmap.resetExtent(tree);
+		}
 
 		setupGUI(frameX, frameY, sundata.trees);
-		for(int i=0;i<100;i++) {
-			for (Tree tree : sundata.trees) {
-				sundata.sunmap.shadow(tree);
-				tree.sungrow(sundata.sunmap);
-				try {
-					Thread.sleep(20);
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-				};
-			}
+		int year=0;
+		while(true) {
+
+			try {
+				sum(sundata.trees);
+				sundata.sunmap.resetShade();
+				System.out.println(year);
+				year++;
+
+				Thread.sleep(100);
+			} catch (Exception e) {
+				e.printStackTrace();
+			};
+
 		}
 
 	}

@@ -28,7 +28,11 @@ public
 	}
 	
 	void setExt(float e) {
-		ext = e;
+    if (e<=20) {
+        ext = e;
+    }else{
+        ext = 20;
+    }
 	}
 
 	// return the average sunlight for the cells covered by the tree
@@ -42,8 +46,9 @@ public
 				}
 			}
 		}
+		//System.out.println(sunlight);
 		sunlight = sunlight/(ext*2+1)*(ext*2+1);
-		return sunlight;
+		return sunlight/growfactor;
 	}
 	
 	// is the tree extent within the provided range [minr, maxr)
@@ -53,6 +58,10 @@ public
 	
 	// grow a tree according to its sun exposure
 	void sungrow(Land land) {
-		setExt(sunexposure(land)/growfactor);
+		setExt(ext+(sunexposure(land)));
 	}
+
+    void resetExtent() {
+        this.setExt(0.4f);
+    }
 }

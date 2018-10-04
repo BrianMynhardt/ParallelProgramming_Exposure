@@ -1,12 +1,14 @@
 package ParallelTrees;
 
+import java.util.Arrays;
+
 public class Land{
 	
 	// to do
 	// sun exposure data here
 	private final int dimX,dimY;
-	private float[][] sunMap;
-	private float[][] ShadedsunMap;
+	volatile private float[][] sunMap;
+	volatile private float[][] ShadedsunMap;
 
 
 	static float shadefraction = 0.1f; // only this fraction of light is transmitted by a tree
@@ -20,19 +22,21 @@ public class Land{
 	}
 	// return the number of landscape cells in the x dimension
 	int getDimX() {
-		int temp = dimX;
-		return temp;
+		return dimX;
 	}
 	// return the number of landscape cells in the y dimension
 	int getDimY() {
-		int temp = dimY;
-		return temp;
+		return dimY;
 	}
 	
 	// Reset the shaded landscape to the same as the initial sun exposed landscape
 	// Needs to be done after each growth pass of the simulator
 	void resetShade() {
-		// to do
+		for (int i=0; i<dimY;i++){
+			for (int j=0;j<dimX;j++){
+				ShadedsunMap[i][j] = getFull(j,i);
+			}
+		}
 	}
 	// return the sun exposure of the initial unshaded landscape at position <x,y?
 	float getFull(int x, int y) {
@@ -69,5 +73,9 @@ public class Land{
 				}
 			}
 		}
+	}
+
+	void resetExtent(Tree tree){
+		tree.resetExtent();
 	}
 }

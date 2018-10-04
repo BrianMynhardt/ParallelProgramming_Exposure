@@ -6,7 +6,7 @@ public class SumArray extends RecursiveTask<Float> {
     int lo; // arguments
     int hi;
     Tree[] trees;
-    static int SEQUENTIAL_CUTOFF = 10000;
+    static int SEQUENTIAL_CUTOFF = 500;
     Land sunMap;
 
     // result

@@ -81,7 +81,9 @@ public class TreeGrow implements ActionListener {
 			public void actionPerformed( ActionEvent e ) {
 				if ("disable".equals(e.getActionCommand())) {
 					try {
-						t1.wait();
+						synchronized() {
+
+						}
 					}catch(InterruptedException d){
 
 					}
